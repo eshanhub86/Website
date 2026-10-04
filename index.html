@@ -1,0 +1,3726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- =========================================================
+       DR. ESHAN SAMANTA — PERSONAL ACADEMIC WEBSITE
+       Single-file HTML / CSS / JavaScript
+       External dependency: Google Fonts only
+       ========================================================= -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dr. Eshan Samanta | Academic | Researcher | IEEE</title>
+
+  <meta name="description"
+        content="Dr. Eshan Samanta, Ph.D. (Tech.), Assistant Professor and Acting Dean (Admin), Electrical & Electronics Engineering, Bharat Institute of Engineering & Technology, Hyderabad. Researcher in intelligent fault protection, IoT, power electronics, renewable energy, smart grids and emerging technologies.">
+
+  <meta name="author" content="Dr. Eshan Samanta">
+
+  <meta name="keywords"
+        content="Dr Eshan Samanta, Electrical Engineering, Electronics Engineering, IEEE, IoT, Power Electronics, Smart Grid, Renewable Energy, Fuzzy Logic, Intelligent Fault Protection, Energy Harvesting, EV, Researcher, Professor">
+
+  <meta name="theme-color" content="#071a2b">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="Dr. Eshan Samanta | Academic & Research Portfolio">
+  <meta property="og:description"
+        content="Assistant Professor & Acting Dean (Admin), Electrical & Electronics Engineering | Senior Member IEEE">
+  <!-- EDIT: Add your final website/social preview image -->
+  <meta property="og:image" content="images/eshan-samanta-social.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Dr. Eshan Samanta | Academic & Research Portfolio">
+  <meta name="twitter:description"
+        content="Academic, research and professional portfolio of Dr. Eshan Samanta">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    /* =========================================================
+       1. DESIGN SYSTEM
+       ========================================================= */
+
+    :root {
+      --navy-950: #04111d;
+      --navy-900: #071a2b;
+      --navy-800: #0b263b;
+      --navy-700: #123a54;
+
+      --teal-700: #087c73;
+      --teal-600: #0f9d91;
+      --teal-500: #19b8a8;
+      --teal-100: #d9f5f1;
+
+      --white: #ffffff;
+
+      --gray-50: #f7fafc;
+      --gray-100: #eef3f6;
+      --gray-200: #dbe5ea;
+      --gray-400: #8293a0;
+      --gray-600: #526575;
+      --gray-800: #243746;
+
+      --bg: #f7fafc;
+      --surface: #ffffff;
+      --surface-alt: #eef6f6;
+
+      --text: #152936;
+      --text-muted: #526575;
+      --border: #dbe5ea;
+
+      --shadow-sm:
+        0 5px 18px rgba(4, 17, 29, 0.06);
+
+      --shadow-md:
+        0 16px 45px rgba(4, 17, 29, 0.10);
+
+      --shadow-lg:
+        0 28px 80px rgba(4, 17, 29, 0.16);
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+
+      --container: 1180px;
+      --nav-height: 74px;
+    }
+
+    html[data-theme="dark"] {
+
+      --bg: #04111d;
+      --surface: #0a1d2c;
+      --surface-alt: #0c2738;
+
+      --text: #f1f7fa;
+      --text-muted: #a9bac5;
+      --border: #1c394b;
+
+      --gray-200: #1c394b;
+      --gray-600: #a9bac5;
+
+      --shadow-sm:
+        0 5px 18px rgba(0,0,0,0.20);
+
+      --shadow-md:
+        0 16px 45px rgba(0,0,0,0.28);
+
+      --shadow-lg:
+        0 28px 80px rgba(0,0,0,0.40);
+    }
+
+
+    /* =========================================================
+       2. RESET / ACCESSIBILITY
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        "Inter",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      line-height: 1.65;
+
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--teal-500);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+
+    /* =========================================================
+       3. COMMON TYPOGRAPHY
+       ========================================================= */
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      color: var(--teal-600);
+
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "";
+
+      width: 30px;
+      height: 2px;
+
+      background: var(--teal-500);
+
+      border-radius: 100px;
+    }
+
+    .section-title {
+      max-width: 820px;
+
+      margin: 13px 0 0;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size:
+        clamp(2.05rem, 6vw, 3.4rem);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.045em;
+    }
+
+    .section-intro {
+      max-width: 750px;
+
+      margin: 18px 0 0;
+
+      color: var(--text-muted);
+
+      font-size: 1rem;
+    }
+
+
+    /* =========================================================
+       4. NAVIGATION
+       ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      height: var(--nav-height);
+
+      background:
+        color-mix(
+          in srgb,
+          var(--surface) 93%,
+          transparent
+        );
+
+      border-bottom: 1px solid var(--border);
+
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      text-decoration: none;
+
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+
+      display: grid;
+      place-items: center;
+
+      color: white;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--teal-500),
+          var(--navy-800)
+        );
+
+      font-size: 0.82rem;
+    }
+
+    .nav-links {
+      position: fixed;
+
+      inset:
+        var(--nav-height)
+        16px
+        auto
+        16px;
+
+      display: none;
+      flex-direction: column;
+
+      padding: 18px;
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius-md);
+
+      box-shadow: var(--shadow-lg);
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+
+      color: var(--text-muted);
+
+      text-decoration: none;
+
+      border-radius: 9px;
+
+      font-size: 0.83rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal-600);
+      background: var(--surface-alt);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-button,
+    .menu-button {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      padding: 0;
+
+      color: var(--text);
+
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      border-radius: 11px;
+    }
+
+    .menu-button {
+      font-size: 1.15rem;
+    }
+
+
+    /* =========================================================
+       5. HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+
+      min-height:
+        calc(100vh - var(--nav-height));
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(25,184,168,0.24),
+          transparent 31%
+        ),
+
+        radial-gradient(
+          circle at 10% 90%,
+          rgba(15,157,145,0.17),
+          transparent 30%
+        ),
+
+        var(--navy-950);
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.22;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.06) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.06) 1px,
+          transparent 1px
+        );
+
+      background-size: 48px 48px;
+
+      mask-image:
+        linear-gradient(
+          90deg,
+          black,
+          transparent 92%
+        );
+    }
+
+    .hero-grid {
+      position: relative;
+
+      display: grid;
+
+      gap: 50px;
+
+      align-items: center;
+
+      padding: 78px 0;
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 20px;
+
+      padding: 8px 13px;
+
+      color: #bceee8;
+
+      background:
+        rgba(25,184,168,0.09);
+
+      border:
+        1px solid
+        rgba(25,184,168,0.27);
+
+      border-radius: 999px;
+
+      font-size: 0.72rem;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      background: var(--teal-500);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 5px
+        rgba(25,184,168,0.10);
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size:
+        clamp(3rem, 12vw, 6.5rem);
+
+      line-height: 0.96;
+
+      letter-spacing: -0.065em;
+    }
+
+    .hero h1 span {
+      display: block;
+
+      color: var(--teal-500);
+    }
+
+    .hero-tagline {
+      margin: 25px 0 0;
+
+      color: #e3eff3;
+
+      font-size:
+        clamp(1.15rem, 3vw, 1.55rem);
+
+      font-weight: 700;
+    }
+
+    .hero-role {
+      max-width: 750px;
+
+      margin: 13px 0 0;
+
+      color: #a9c0cb;
+
+      font-size: 0.97rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 32px;
+    }
+
+    .button {
+      min-height: 48px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 0 20px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      font-size: 0.86rem;
+      font-weight: 800;
+
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--navy-950);
+
+      background: var(--teal-500);
+
+      box-shadow:
+        0 12px 30px
+        rgba(25,184,168,0.20);
+    }
+
+    .button-primary:hover {
+      background: #2bc9b9;
+    }
+
+    .button-secondary {
+      color: white;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.20);
+    }
+
+    .button-secondary:hover {
+      background:
+        rgba(255,255,255,0.11);
+    }
+
+
+    /* =========================================================
+       6. PROFILE PHOTO
+       ========================================================= */
+
+    .profile-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-card {
+      width: min(100%, 340px);
+
+      padding: 14px;
+
+      background:
+        rgba(255,255,255,0.06);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+      border-radius: 30px;
+
+      box-shadow: var(--shadow-lg);
+
+      transform: rotate(1deg);
+    }
+
+    .profile-photo {
+      position: relative;
+
+      aspect-ratio: 4 / 5;
+
+      display: grid;
+      place-items: center;
+
+      overflow: hidden;
+
+      border-radius: 23px;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(25,184,168,0.30),
+          transparent 34%
+        ),
+
+        linear-gradient(
+          145deg,
+          #123a54,
+          #071a2b
+        );
+    }
+
+    /*
+      ==========================================================
+      EDIT:
+      Replace the entire .profile-photo content with:
+
+      <img
+        src="images/eshan-samanta.jpg"
+        alt="Dr. Eshan Samanta, Assistant Professor in
+             Electrical & Electronics Engineering">
+
+      ==========================================================
+    */
+
+    .initials {
+      position: relative;
+      z-index: 2;
+
+      width: 125px;
+      height: 125px;
+
+      display: grid;
+      place-items: center;
+
+      color: white;
+
+      background:
+        rgba(25,184,168,0.12);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.23);
+
+      border-radius: 50%;
+
+      font-family: "Manrope", sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .photo-note {
+      position: absolute;
+
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+
+      z-index: 3;
+
+      padding: 10px;
+
+      color: #d8e7ec;
+
+      background:
+        rgba(4,17,29,0.78);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+      border-radius: 10px;
+
+      font-size: 0.68rem;
+
+      text-align: center;
+    }
+
+
+    /* =========================================================
+       7. ABOUT
+       ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      gap: 35px;
+
+      margin-top: 47px;
+    }
+
+    .about-copy {
+      font-size: 1rem;
+    }
+
+    .about-copy p {
+      margin:
+        0 0 18px;
+
+      color: var(--text-muted);
+    }
+
+    .about-copy strong {
+      color: var(--text);
+    }
+
+    .credential-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 13px;
+    }
+
+    .credential {
+      padding: 20px;
+
+      background: var(--surface);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: var(--radius-md);
+
+      box-shadow: var(--shadow-sm);
+    }
+
+    .credential strong {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: var(--text);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1.25rem;
+    }
+
+    .credential span {
+      color: var(--text-muted);
+
+      font-size: 0.76rem;
+    }
+
+
+    /* =========================================================
+       8. HIGHLIGHTS
+       ========================================================= */
+
+    .highlight-strip {
+      display: grid;
+
+      gap: 13px;
+
+      margin-top: 35px;
+    }
+
+    .highlight {
+      padding: 22px;
+
+      color: white;
+
+      background: var(--navy-900);
+
+      border-radius: var(--radius-md);
+
+      box-shadow: var(--shadow-sm);
+    }
+
+    .highlight-value {
+      display: block;
+
+      margin-bottom: 3px;
+
+      color: var(--teal-500);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .highlight-label {
+      color: #b9cad3;
+
+      font-size: 0.80rem;
+    }
+
+
+    /* =========================================================
+       9. EXPERTISE
+       ========================================================= */
+
+    .expertise-section {
+      background: var(--surface);
+    }
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 14px;
+
+      margin-top: 44px;
+    }
+
+    .skill-card {
+      padding: 24px;
+
+      background: var(--surface);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: var(--radius-md);
+
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(25,184,168,0.45);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    .skill-number {
+      color: var(--teal-500);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .skill-card h3 {
+      margin: 10px 0 8px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1.06rem;
+    }
+
+    .skill-card p {
+      margin: 0;
+
+      color: var(--text-muted);
+
+      font-size: 0.84rem;
+    }
+
+
+    /* =========================================================
+       10. PROJECTS / PUBLICATIONS
+       ========================================================= */
+
+    .publication-grid {
+      display: grid;
+
+      gap: 16px;
+
+      margin-top: 44px;
+    }
+
+    .publication-card {
+      display: flex;
+      flex-direction: column;
+
+      padding: 25px;
+
+      background: var(--surface);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: var(--radius-md);
+
+      box-shadow: var(--shadow-sm);
+
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .publication-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(25,184,168,0.42);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    .pub-type {
+      color: var(--teal-600);
+
+      font-size: 0.69rem;
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .publication-card h3 {
+      margin: 12px 0 9px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1.06rem;
+
+      line-height: 1.35;
+    }
+
+    .publication-card p {
+      flex: 1;
+
+      margin: 0 0 19px;
+
+      color: var(--text-muted);
+
+      font-size: 0.83rem;
+    }
+
+    .publication-link {
+      display: inline-flex;
+
+      width: fit-content;
+
+      align-items: center;
+
+      gap: 6px;
+
+      color: var(--teal-600);
+
+      text-decoration: none;
+
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .publication-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================================================
+       11. PATENTS
+       ========================================================= */
+
+    .patent-section {
+      background: var(--surface);
+    }
+
+    .patent-grid {
+      display: grid;
+
+      gap: 12px;
+
+      margin-top: 42px;
+    }
+
+    .patent {
+      padding: 19px;
+
+      background: var(--bg);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 14px;
+    }
+
+    .patent-status {
+      color: var(--teal-600);
+
+      font-size: 0.68rem;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+    }
+
+    .patent h3 {
+      margin: 7px 0 4px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 0.95rem;
+    }
+
+    .patent p {
+      margin: 0;
+
+      color: var(--text-muted);
+
+      font-size: 0.77rem;
+    }
+
+
+    /* =========================================================
+       12. TIMELINE
+       ========================================================= */
+
+    .timeline {
+      position: relative;
+
+      margin-top: 47px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 7px;
+      top: 4px;
+      bottom: 4px;
+
+      width: 2px;
+
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+
+      padding:
+        0
+        0
+        38px
+        35px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+
+      left: 0;
+      top: 4px;
+
+      width: 16px;
+      height: 16px;
+
+      background: var(--teal-500);
+
+      border:
+        4px solid
+        var(--bg);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 1px
+        var(--teal-500);
+    }
+
+    .timeline-period {
+      color: var(--teal-600);
+
+      font-size: 0.71rem;
+      font-weight: 800;
+
+      letter-spacing: 0.11em;
+    }
+
+    .timeline-item h3 {
+      margin: 6px 0 3px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1.05rem;
+    }
+
+    .timeline-place {
+      color: var(--text-muted);
+
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .timeline-item p {
+      margin: 8px 0 0;
+
+      color: var(--text-muted);
+
+      font-size: 0.82rem;
+    }
+
+
+    /* =========================================================
+       13. PROFESSIONAL ACTIVITIES
+       ========================================================= */
+
+    .activity-grid {
+      display: grid;
+
+      gap: 14px;
+
+      margin-top: 44px;
+    }
+
+    .activity-card {
+      padding: 23px;
+
+      background: var(--surface);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: var(--radius-md);
+    }
+
+    .activity-card h3 {
+      margin: 0 0 9px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1rem;
+    }
+
+    .activity-card p {
+      margin: 0;
+
+      color: var(--text-muted);
+
+      font-size: 0.82rem;
+    }
+
+
+    /* =========================================================
+       14. CONTACT
+       ========================================================= */
+
+    .contact-section {
+      color: white;
+
+      background: var(--navy-950);
+    }
+
+    .contact-section .section-title {
+      color: white;
+    }
+
+    .contact-section .section-intro {
+      color: #a9bac5;
+    }
+
+    .contact-grid {
+      display: grid;
+
+      gap: 42px;
+
+      margin-top: 45px;
+    }
+
+    .contact-details {
+      display: grid;
+
+      gap: 11px;
+
+      margin-top: 27px;
+    }
+
+    .contact-item {
+      padding: 16px;
+
+      background:
+        rgba(255,255,255,0.04);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+      border-radius: 12px;
+    }
+
+    .contact-item small {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #83a0ae;
+
+      font-size: 0.67rem;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+    }
+
+    .contact-item a {
+      color: #e6f4f3;
+
+      text-decoration: none;
+
+      overflow-wrap: anywhere;
+
+      font-size: 0.86rem;
+    }
+
+    .contact-item a:hover {
+      color: var(--teal-500);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 16px;
+    }
+
+    .social-link {
+      padding: 8px 11px;
+
+      color: #dce9ee;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      font-size: 0.73rem;
+      font-weight: 700;
+    }
+
+    .social-link:hover {
+      color: var(--teal-500);
+      border-color: var(--teal-500);
+    }
+
+    .contact-form {
+      padding: 25px;
+
+      background:
+        rgba(255,255,255,0.04);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+      border-radius: var(--radius-md);
+    }
+
+    .form-row {
+      display: grid;
+
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #dce9ee;
+
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+
+      padding: 12px 13px;
+
+      color: white;
+
+      background:
+        rgba(255,255,255,0.05);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.14);
+
+      border-radius: 10px;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #78909d;
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+
+      resize: vertical;
+    }
+
+    .form-note {
+      margin: 12px 0 0;
+
+      color: #8198a5;
+
+      font-size: 0.69rem;
+    }
+
+
+    /* =========================================================
+       15. FOOTER
+       ========================================================= */
+
+    footer {
+      padding: 25px 0;
+
+      color: #91a6b2;
+
+      background: var(--navy-950);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+      font-size: 0.72rem;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 9px;
+
+      justify-content: space-between;
+    }
+
+
+    /* =========================================================
+       16. BACK TO TOP
+       ========================================================= */
+
+    .back-top {
+      position: fixed;
+
+      right: 18px;
+      bottom: 18px;
+
+      z-index: 900;
+
+      width: 44px;
+      height: 44px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 50%;
+
+      color: var(--text);
+
+      background: var(--surface);
+
+      box-shadow: var(--shadow-md);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(10px);
+
+      transition:
+        opacity 0.18s ease,
+        visibility 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       17. RESPONSIVE
+       ========================================================= */
+
+    @media (min-width: 640px) {
+
+      .container {
+        width:
+          min(
+            calc(100% - 48px),
+            var(--container)
+          );
+      }
+
+      .skills-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .publication-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .highlight-strip {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+      .activity-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+
+    @media (min-width: 850px) {
+
+      .menu-button {
+        display: none;
+      }
+
+      .nav-links {
+        position: static;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        gap: 1px;
+
+        padding: 0;
+
+        background: transparent;
+
+        border: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+      }
+
+      .nav-links a {
+        padding:
+          8px 9px;
+
+        font-size: 0.75rem;
+      }
+
+      .hero-grid {
+        grid-template-columns:
+          minmax(0, 1.5fr)
+          minmax(300px, 0.7fr);
+      }
+
+      .profile-wrap {
+        justify-content: flex-end;
+      }
+
+      .about-grid {
+        grid-template-columns:
+          1.2fr 0.8fr;
+
+        align-items: start;
+      }
+
+      .skills-grid {
+        grid-template-columns:
+          repeat(4, 1fr);
+      }
+
+      .publication-grid {
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns:
+          1fr 0.85fr;
+
+        align-items: start;
+      }
+    }
+
+
+    @media (min-width: 1080px) {
+
+      .nav-links a {
+        padding-inline: 10px;
+      }
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <a
+        class="brand"
+        href="#home"
+        aria-label="Dr. Eshan Samanta home">
+
+        <span
+          class="brand-mark"
+          aria-hidden="true">
+          ES
+        </span>
+
+        <span>
+          Dr. Eshan Samanta
+        </span>
+
+      </a>
+
+
+      <nav
+        class="nav-links"
+        id="navLinks"
+        aria-label="Primary navigation">
+
+        <a href="#about">About</a>
+        <a href="#skills">Expertise</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Journey</a>
+        <a href="#activities">Leadership</a>
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+
+      <div class="nav-actions">
+
+        <button
+          class="icon-button"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          title="Toggle light/dark mode">
+          ☾
+        </button>
+
+        <button
+          class="menu-button"
+          id="menuToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          aria-label="Open navigation menu">
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =======================================================
+         1. HERO
+         ======================================================= -->
+
+    <section
+      class="hero"
+      id="home"
+      aria-labelledby="hero-title">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            <span
+              class="eyebrow-dot"
+              aria-hidden="true"></span>
+
+            Educator · Administrator · Researcher
+          </div>
+
+
+          <h1 id="hero-title">
+            Dr. Eshan
+            <span>Samanta</span>
+          </h1>
+
+
+          <p class="hero-tagline">
+            Makers of the Future Professional
+          </p>
+
+
+          <p class="hero-role">
+            Ph.D. (Tech.) · Assistant Professor &amp; Acting Dean (Admin)
+            · Electrical &amp; Electronics Engineering · Senior Member IEEE
+          </p>
+
+
+          <p class="hero-role">
+            Bharat Institute of Engineering &amp; Technology, Hyderabad
+            · Autonomous Institution · NAAC 'A' Grade
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a
+              class="button button-primary"
+              href="#contact">
+              Contact me
+              <span aria-hidden="true">→</span>
+            </a>
+
+
+            <a
+              class="button button-secondary"
+              href="#work">
+              View my work
+              <span aria-hidden="true">↘</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             PROFESSIONAL PHOTO
+             EDIT:
+             Replace this placeholder with your photograph.
+             ===================================================== -->
+
+        <div class="profile-wrap">
+
+          <div class="profile-card">
+
+            <div
+              class="profile-photo"
+              role="img"
+              aria-label="Placeholder for professional photograph of Dr. Eshan Samanta">
+
+              <!--
+                REPLACE WITH:
+
+                <img
+                  src="images/eshan-samanta.jpg"
+                  alt="Dr. Eshan Samanta, Assistant Professor and Acting Dean (Admin), Electrical & Electronics Engineering">
+              -->
+
+              <div
+                class="initials"
+                aria-hidden="true">
+                ES
+              </div>
+
+              <div class="photo-note">
+                EDIT: Add professional academic photograph
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         2. ABOUT
+         ======================================================= -->
+
+    <section
+      class="section"
+      id="about"
+      aria-labelledby="about-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          About
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="about-title">
+          Educator. Researcher. Academic Leader.
+        </h2>
+
+
+        <div class="about-grid">
+
+          <div class="about-copy">
+
+            <p>
+              I am <strong>Dr. Eshan Samanta, Ph.D. (Tech.)</strong>,
+              an academician, researcher and academic administrator
+              with more than 16 years of professional experience in
+              engineering education, research and industry.
+            </p>
+
+            <p>
+              I currently serve as
+              <strong>Assistant Professor and Acting Dean (Admin),
+              Electrical &amp; Electronics Engineering</strong> at
+              Bharat Institute of Engineering &amp; Technology,
+              Hyderabad, an autonomous institution with NAAC 'A' Grade.
+            </p>
+
+            <p>
+              My academic and research interests span
+              <strong>intelligent fault protection, fuzzy inference
+              systems, power systems, power electronics, IoT,
+              renewable energy, smart grids, electric vehicles,
+              automation, embedded systems and emerging AI-enabled
+              electrical engineering applications.</strong>
+            </p>
+
+            <p>
+              My teaching experience includes
+              <strong>Digital Signal Processing, Power System,
+              Power Electronics, AutoCAD, AC Machines, Control Systems,
+              Microprocessor &amp; Microcontroller</strong> and
+              interdisciplinary technology applications.
+            </p>
+
+            <p>
+              I am particularly interested in creating a positive,
+              student-centred learning environment where teaching,
+              research, innovation, professional societies and
+              industry engagement work together to develop
+              future-ready engineering professionals.
+            </p>
+
+          </div>
+
+
+          <div class="credential-grid">
+
+            <div class="credential">
+              <strong>16+ Years</strong>
+              <span>
+                Academic, research &amp; professional experience
+              </span>
+            </div>
+
+            <div class="credential">
+              <strong>Ph.D. (Tech.)</strong>
+              <span>
+                Intelligent Fault Protection Scheme
+              </span>
+            </div>
+
+            <div class="credential">
+              <strong>M.Tech. 8.78</strong>
+              <span>
+                Mechatronics · Silver Medalist
+              </span>
+            </div>
+
+            <div class="credential">
+              <strong>Senior Member</strong>
+              <span>
+                IEEE
+              </span>
+            </div>
+
+            <div class="credential">
+              <strong>Chartered Engineer</strong>
+              <span>
+                Electrical · Royal Charter
+              </span>
+            </div>
+
+            <div class="credential">
+              <strong>M.I.E.</strong>
+              <span>
+                Composite Member · Institution of Engineers (India)
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HIGHLIGHTS -->
+
+        <div class="highlight-strip">
+
+          <div class="highlight">
+            <span class="highlight-value">
+              6+
+            </span>
+            <span class="highlight-label">
+              Patents accepted / published / granted
+            </span>
+          </div>
+
+
+          <div class="highlight">
+            <span class="highlight-value">
+              10+
+            </span>
+            <span class="highlight-label">
+              Selected research publications / chapters
+            </span>
+          </div>
+
+
+          <div class="highlight">
+            <span class="highlight-value">
+              3
+            </span>
+            <span class="highlight-label">
+              Editorial Board memberships
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         3. SKILLS / EXPERTISE
+         ======================================================= -->
+
+    <section
+      class="section expertise-section"
+      id="skills"
+      aria-labelledby="skills-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          Expertise
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="skills-title">
+          Research and teaching at the intersection of intelligent
+          electrical systems and emerging technology.
+        </h2>
+
+
+        <p class="section-intro">
+          Areas developed through teaching, doctoral research,
+          publications, projects, professional training and
+          interdisciplinary innovation.
+        </p>
+
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <span class="skill-number">01</span>
+
+            <h3>
+              Intelligent Fault Protection
+            </h3>
+
+            <p>
+              Fuzzy inference systems, intelligent relaying,
+              multistage protection, overcurrent protection and
+              soft-computing-based power-system protection.
+            </p>
+          </article>
+
+
+          <article class="skill-card">
+            <span class="skill-number">02</span>
+
+            <h3>
+              Power Systems &amp; Smart Grid
+            </h3>
+
+            <p>
+              Power-system analysis, protection, smart-grid concepts,
+              renewable-energy integration and intelligent electrical
+              networks.
+            </p>
+          </article>
+
+
+          <article class="skill-card">
+            <span class="skill-number">03</span>
+
+            <h3>
+              Power Electronics
+            </h3>
+
+            <p>
+              Power conversion, renewable-energy systems, electric
+              vehicles, energy management and power-electronic
+              applications.
+            </p>
+          </article>
+
+
+          <article class="skill-card">
+            <span class="skill-number">04</span>
+
+            <h3>
+              IoT &amp; Embedded Systems
+            </h3>
+
+            <p>
+              IoT, microcontrollers, Arduino, embedded systems,
+              automation, sensing and intelligent monitoring.
+            </p>
+          </article>
+
+
+          <article class="skill-card">
+            <span class="skill-number">05</span>
+
+            <h3>
+              AI, Fuzzy Logic &amp; Machine Learning
+            </h3>
+
+            <p>
+              Fuzzy logic, machine learning, intelligent control,
+              expert systems and AI-enabled engineering applications.
+            </p>
+          </article>
+
+
+          <article class="skill-card">
+            <span class="skill-number">06</span>
+
+            <h3>
+              EV &amp; Renewable Energy
+            </h3>
+
+            <p>
+              Hybrid electric vehicles, EV charging, renewable
+              energy, sustainable electrical systems and grid
+              integration.
+            </p>
+          </article>
+
+
+          <article class="skill-card">
+            <span class="skill-number">07</span>
+
+            <h3>
+              Automation &amp; Control
+            </h3>
+
+            <p>
+              PLC, control systems, robotics, AutoCAD, instrumentation
+              and industrial automation.
+            </p>
+          </article>
+
+
+          <article class="skill-card">
+            <span class="skill-number">08</span>
+
+            <h3>
+              Engineering Education
+            </h3>
+
+            <p>
+              Student-centred pedagogy, curriculum development,
+              accreditation, academic leadership, mentoring and
+              innovation activities.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         4. PROJECTS / PUBLICATIONS
+         ======================================================= -->
+
+    <section
+      class="section"
+      id="work"
+      aria-labelledby="work-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          Selected Work
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="work-title">
+          Research, publications and innovation.
+        </h2>
+
+
+        <p class="section-intro">
+          Selected research contributions from intelligent protection,
+          fuzzy systems, power electronics, electric vehicles,
+          IoT and automation.
+        </p>
+
+
+        <div class="publication-grid">
+
+
+          <!-- PUBLICATION 1 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCIE · Wiley
+            </span>
+
+            <h3>
+              Best Fit Membership Function for Designing Fuzzy Logic
+              Controller Aided Intelligent Overcurrent Fault Protection Scheme
+            </h3>
+
+            <p>
+              Samonto, S., Kar, S., Pal, S., Sekh, A.A., Castillo, O.,
+              Park, G.K. International Transactions on Electrical Energy
+              Systems, 2021.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.1002/2050-7038.12875"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- PUBLICATION 2 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCI / SCIE · Elsevier
+            </span>
+
+            <h3>
+              Fuzzy Logic Based Multistage Relaying Model for Cascaded
+              Intelligent Fault Protection Scheme
+            </h3>
+
+            <p>
+              Samonto, S., Kar, S., Pal, S., Sekh, A.A.
+              Electric Power Systems Research, Vol. 184, 2020.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.1016/j.epsr.2020.106341"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- PUBLICATION 3 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCIE · Elsevier
+            </span>
+
+            <h3>
+              Fuzzy Logic Controller Aided Expert Relaying
+              Mechanism System
+            </h3>
+
+            <p>
+              Samonto, S., Kar, S., Pal, S., Atan, O., Sekh, A.A.
+              International Journal of the Franklin Institute,
+              2021.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.1016/j.jfranklin.2021.07.035"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- PUBLICATION 4 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCOPUS · Book Chapter
+            </span>
+
+            <h3>
+              Power Electronics in Hydroelectric Energy Systems
+            </h3>
+
+            <p>
+              Samanta, E. Power Electronics Handbook, 2024,
+              Butterworth-Heinemann, pp. 939–954.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.1016/B978-0-323-99216-9.00013-5"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- PUBLICATION 5 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCIE · Springer
+            </span>
+
+            <h3>
+              Power System Protection Using Soft Computing –
+              A Brief Survey
+            </h3>
+
+            <p>
+              Samanta, E., Kar, S., Pal, S., Sekh, A.A.
+              Soft Computing, 2025.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.1007/s00500-025-10691-z"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- PUBLICATION 6 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCOPUS · 2026
+            </span>
+
+            <h3>
+              Power Split Strategy Using Cascaded Fuzzy Control
+              in a Hybrid Electric Vehicle
+            </h3>
+
+            <p>
+              Samanta, E., Kar, S., De, A.
+              Transactions on Fuzzy Sets and Systems, 2026;
+              5(2): 167–189.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.71602/tfss.2026.1193875"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- PUBLICATION 7 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCOPUS · Book Chapter
+            </span>
+
+            <h3>
+              An Expert System-Based Automation in Indian Traction
+              System for a One Way Single Platform Station by
+              Introducing PLC
+            </h3>
+
+            <p>
+              Samanta, E., Sekh, A.A., Khatua, D. et al.
+              Advancements in Instrumentation and Control in Applied
+              System Applications, IGI Global, 2020.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.4018/978-1-7998-2584-5.ch013"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+
+          <!-- PUBLICATION 8 -->
+
+          <article class="publication-card">
+
+            <span class="pub-type">
+              SCOPUS · Springer
+            </span>
+
+            <h3>
+              An Approach to Develop a Dedicated Micro AI Processor
+              for an Intelligent Fault Protection Scheme
+            </h3>
+
+            <p>
+              Samonto, S., Pal, S., Khatua, D., Islam, Sk M.
+              International Conference on Information Technology
+              and Applied Mathematics, 2019.
+            </p>
+
+            <a
+              class="publication-link"
+              href="https://doi.org/10.1007/978-3-030-34152-7_32"
+              target="_blank"
+              rel="noopener noreferrer">
+              DOI / Publication
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         5A. PATENTS
+         ======================================================= -->
+
+    <section
+      class="section patent-section"
+      aria-labelledby="patent-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          Innovation
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="patent-title">
+          Patents and applied innovation.
+        </h2>
+
+
+        <div class="patent-grid">
+
+
+          <article class="patent">
+
+            <span class="patent-status">
+              Accepted &amp; Published · 2024
+            </span>
+
+            <h3>
+              Staircase Climbing Robot
+            </h3>
+
+            <p>
+              Application No. 417616-001 · CBR No. 208757
+            </p>
+
+          </article>
+
+
+          <article class="patent">
+
+            <span class="patent-status">
+              Accepted &amp; Published · 2024
+            </span>
+
+            <h3>
+              Solar Powered EV Charging Vehicle
+            </h3>
+
+            <p>
+              Application No. 432898-001 · CBR No. 218350
+            </p>
+
+          </article>
+
+
+          <article class="patent">
+
+            <span class="patent-status">
+              Accepted &amp; Published · 2024
+            </span>
+
+            <h3>
+              Standalone Renewable Energy Power Pole
+            </h3>
+
+            <p>
+              Application No. 432900-001 · CBR No. 218350
+            </p>
+
+          </article>
+
+
+          <article class="patent">
+
+            <span class="patent-status">
+              Published · 2024
+            </span>
+
+            <h3>
+              Automated System for Smart Isolation and
+              Disinfection of Airborne Viruses
+            </h3>
+
+            <p>
+              Application No. 202441096924 A
+            </p>
+
+          </article>
+
+
+          <article class="patent">
+
+            <span class="patent-status">
+              Accepted &amp; Published · 2025
+            </span>
+
+            <h3>
+              AI-Powered Building Electric Grid Fault Monitor
+            </h3>
+
+            <p>
+              Application No. 445602-001 · CBR No. 201801
+            </p>
+
+          </article>
+
+
+          <article class="patent">
+
+            <span class="patent-status">
+              Granted · UK Patent
+            </span>
+
+            <h3>
+              AI-Powered Real-Time Electronic Fault Monitoring Device
+            </h3>
+
+            <p>
+              Application No. 6427238 · CBR Date: 28/02/2025
+            </p>
+
+          </article>
+
+
+          <article class="patent">
+
+            <span class="patent-status">
+              Accepted &amp; Published · 2026
+            </span>
+
+            <h3>
+              Wheelchair Cum Stretcher
+            </h3>
+
+            <p>
+              Application No. 504640-001 · CBR No. 213025
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         5B. EXPERIENCE + EDUCATION
+         ======================================================= -->
+
+    <section
+      class="section"
+      id="experience"
+      aria-labelledby="experience-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          Career
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="experience-title">
+          Experience and education.
+        </h2>
+
+
+        <p class="section-intro">
+          More than 16 years spanning engineering education,
+          academic leadership, research and industrial experience.
+        </p>
+
+
+        <div class="timeline">
+
+
+          <!-- CURRENT -->
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              JAN 2026 — PRESENT
+            </div>
+
+            <h3>
+              Assistant Professor &amp; Acting Dean (Admin)
+            </h3>
+
+            <div class="timeline-place">
+              Electrical &amp; Electronics Engineering Department
+              · Bharat Institute of Engineering &amp; Technology,
+              Hyderabad
+            </div>
+
+            <p>
+              Teaching, academic administration, research-based
+              assessment, departmental development, student
+              innovation and professional activities. Faculty
+              Counsellor for IEEE Student Branch, Faculty Advisor
+              for E-Cell, NPTEL SPOC and IIC R&amp;D Idea Cafe
+              Coordinator.
+            </p>
+
+          </article>
+
+
+          <!-- GIST -->
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              AUG 2017 — JAN 2026
+            </div>
+
+            <h3>
+              Assistant Professor &amp; Head
+            </h3>
+
+            <div class="timeline-place">
+              Electrical Engineering Department &
+              Fire Technology &amp; Safety Department
+              · Global Institute of Science &amp; Technology,
+              Haldia
+            </div>
+
+            <p>
+              Academic leadership, teaching, curriculum and
+              departmental development. Led the Electrical
+              Engineering programme during NBA accreditation and
+              achieved the highest marks. Organized international
+              webinars, web conferences and FDPs.
+            </p>
+
+          </article>
+
+
+          <!-- RPBM -->
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              JUL 2010 — AUG 2017
+            </div>
+
+            <h3>
+              Assistant Professor &amp; Assistant Head
+            </h3>
+
+            <div class="timeline-place">
+              Electrical Engineering Department
+              · RPBM Jiaganj College of Engineering &amp; Technology,
+              Murshidabad
+            </div>
+
+            <p>
+              Served as Head of the Electrical Engineering
+              Department from 2011–2013. Achieved approximately
+              80% student placement for the cohort and maintained
+              low backlogs. Received Best Teacher Award in 2015.
+            </p>
+
+          </article>
+
+
+          <!-- ESBEE -->
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              MAR 2010 — JUN 2010
+            </div>
+
+            <h3>
+              Site Engineer / Assistant Engineer
+            </h3>
+
+            <div class="timeline-place">
+              ESBEE Electricals, Kolkata
+            </div>
+
+            <p>
+              Worked on the Borjora Project under DVC involving
+              erection, commissioning, operation management,
+              maintenance, procurement, material management and
+              electrical project execution. Associated with
+              dismantling of a 220 kV C-Type, 6 m extension tower.
+            </p>
+
+          </article>
+
+
+          <!-- MANIKARAN -->
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              NOV 2009 — FEB 2010
+            </div>
+
+            <h3>
+              Assistant Manager — Business Development
+            </h3>
+
+            <div class="timeline-place">
+              Manikaran Power Ltd., Kolkata / Mumbai
+            </div>
+
+            <p>
+              Developed business opportunities, identified clients,
+              supported power-market business development and
+              successfully secured a client contract valued at
+              one lakh.
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <!-- EDUCATION -->
+
+        <div
+          class="section-label"
+          style="margin-top:80px;">
+          Education
+        </div>
+
+
+        <div class="timeline">
+
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              2024
+            </div>
+
+            <h3>
+              Doctor of Philosophy (Tech.)
+            </h3>
+
+            <div class="timeline-place">
+              Electrical Engineering
+              · MAKAUT, West Bengal
+              · NITTTR Kolkata
+            </div>
+
+            <p>
+              <strong>
+                Research Topic:
+              </strong>
+              Development of FUZZY Inference System Based
+              Intelligent Fault Protection Scheme.
+            </p>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              2015
+            </div>
+
+            <h3>
+              M.Tech. — Mechatronics
+            </h3>
+
+            <div class="timeline-place">
+              Department of Electrical Engineering
+              · NITTTR Kolkata
+            </div>
+
+            <p>
+              DGPA: <strong>8.78</strong> ·
+              Silver Medalist
+            </p>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              2009
+            </div>
+
+            <h3>
+              B.Tech. — Electrical Engineering
+            </h3>
+
+            <div class="timeline-place">
+              Haldia Institute of Technology
+            </div>
+
+            <p>
+              DGPA: 6.72
+            </p>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              2005
+            </div>
+
+            <h3>
+              Higher Secondary School
+            </h3>
+
+            <div class="timeline-place">
+              Khalsa Model Senior Secondary School
+            </div>
+
+            <p>
+              64%
+            </p>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <span
+              class="timeline-dot"
+              aria-hidden="true"></span>
+
+            <div class="timeline-period">
+              2003
+            </div>
+
+            <h3>
+              Senior Secondary School
+            </h3>
+
+            <div class="timeline-place">
+              Khalsa Model Senior Secondary School
+            </div>
+
+            <p>
+              77%
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         5C. PROFESSIONAL CREDENTIALS
+         ======================================================= -->
+
+    <section
+      class="section expertise-section"
+      aria-labelledby="credentials-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          Professional Identity
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="credentials-title">
+          Professional credentials and academic development.
+        </h2>
+
+
+        <div class="activity-grid">
+
+
+          <article class="activity-card">
+
+            <h3>
+              Professional Memberships
+            </h3>
+
+            <p>
+              Chartered Engineer (Electrical), Royal Charter;
+              Composite Member, M.I.E., Institution of Engineers
+              (India); Life Member, ISTE; Senior Member, IEEE.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Technology &amp; Software
+            </h3>
+
+            <p>
+              C, C++, AutoCAD, MATLAB, Arduino, Linux, Circuit Maker,
+              LaTeX, Keil, RIDE, Proteus, SCILAB and Processing.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Certified Learning
+            </h3>
+
+            <p>
+              IoT, mobile robotics, Python, Data Science, Machine
+              Learning, Smart Grid and IoT skill-development
+              programmes through Coursera, AICTE, NPTEL and ISTE.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Accreditation &amp; Leadership Training
+            </h3>
+
+            <p>
+              Entrepreneurship Development, Student Mentorship,
+              Institutional Management, NBA Accreditation Mechanism,
+              NBA Accreditation and SAR Preparation through NITTTR
+              and related professional programmes.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         5D. LEADERSHIP / PROFESSIONAL ACTIVITIES
+         ======================================================= -->
+
+    <section
+      class="section"
+      id="activities"
+      aria-labelledby="activities-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          Leadership &amp; Service
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="activities-title">
+          Academic leadership beyond the classroom.
+        </h2>
+
+
+        <div class="activity-grid">
+
+
+          <article class="activity-card">
+
+            <h3>
+              IEEE &amp; Professional Activities
+            </h3>
+
+            <p>
+              Faculty Counsellor associated with the inception of
+              the IEEE Student Branch at BIET. Senior Member IEEE.
+              Session Chair at ICEEGT 2025, NITTTR Kolkata.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Innovation &amp; R&amp;D
+            </h3>
+
+            <p>
+              R&amp;D Cell Institute Level In-Charge, IIC R&amp;D
+              Coordinator, Idea Cafe Coordinator and contributor to
+              student innovation and research activities.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              NPTEL &amp; Institutional Activities
+            </h3>
+
+            <p>
+              NPTEL Local Chapter SPOC at BIET, Institute Level
+              Coordinator for Project Day 2026, Faculty Coordinator
+              for Techfest and NBA Mock Inspection Evaluator.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Hackathon &amp; Innovation Evaluation
+            </h3>
+
+            <p>
+              Evaluator for Smart India Hackathon, Toycathon and
+              NBA Mock Inspection activities.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Reviewer
+            </h3>
+
+            <p>
+              Reviewer for journals and conferences including
+              Engineering Applications of Artificial Intelligence,
+              Measurement, Electric Power Systems Research,
+              Iranian Journal of Fuzzy Systems, Soft Computing,
+              Journal of Intelligent &amp; Fuzzy Systems and IEEE
+              conference activities.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Editorial Board Member
+            </h3>
+
+            <p>
+              Editorial Board Member of Journal Automation, Control
+              and Intelligent System; International Innovative
+              Research Journal of Engineering and Technology; and
+              Buletin Ilmiah Sarjana Teknik Elektro.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              FDP / Conference Leadership
+            </h3>
+
+            <p>
+              General Chair, Convener and Coordinator for multiple
+              international webinars, web conferences and faculty
+              development programmes in AI/ML, IoT, EV technology,
+              electrical engineering and smart infrastructure.
+            </p>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Expert Speaker
+            </h3>
+
+            <p>
+              Invited Expert Speaker for workshops and faculty
+              development programmes on IoT and sustainable
+              electrical-engineering applications.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         6. CONTACT
+         ======================================================= -->
+
+    <section
+      class="section contact-section"
+      id="contact"
+      aria-labelledby="contact-title">
+
+      <div class="container">
+
+        <div class="section-label">
+          Contact
+        </div>
+
+
+        <h2
+          class="section-title"
+          id="contact-title">
+          Let's connect around engineering, research and innovation.
+        </h2>
+
+
+        <div class="contact-grid">
+
+
+          <div>
+
+            <p class="section-intro">
+              I welcome academic and research collaborations,
+              professional discussions, expert-talk invitations,
+              student innovation initiatives and opportunities
+              related to emerging electrical and intelligent systems.
+            </p>
+
+
+            <div class="contact-details">
+
+              <div class="contact-item">
+
+                <small>
+                  Email
+                </small>
+
+                <a
+                  href="mailto:write2eshansamanta@gmail.com">
+                  write2eshansamanta@gmail.com
+                </a>
+
+              </div>
+
+
+              <div class="contact-item">
+
+                <small>
+                  Email — Alternate
+                </small>
+
+                <a
+                  href="mailto:ssamonto@yahoo.co.in">
+                  ssamonto@yahoo.co.in
+                </a>
+
+              </div>
+
+
+              <!--
+                EDIT:
+                Add exact LinkedIn URL if available.
+              -->
+
+              <div class="contact-item">
+
+                <small>
+                  Professional Profiles
+                </small>
+
+                <div class="social-links">
+
+                  <a
+                    class="social-link"
+                    href="#"
+                    onclick="return false;">
+                    Google Scholar
+                    · ADD URL
+                  </a>
+
+                  <a
+                    class="social-link"
+                    href="#"
+                    onclick="return false;">
+                    ResearchGate
+                    · ADD URL
+                  </a>
+
+                  <a
+                    class="social-link"
+                    href="#"
+                    onclick="return false;">
+                    ORCID
+                    · ADD URL
+                  </a>
+
+                  <a
+                    class="social-link"
+                    href="#"
+                    onclick="return false;">
+                    LinkedIn
+                    · ADD URL
+                  </a>
+
+                  <a
+                    class="social-link"
+                    href="#"
+                    onclick="return false;">
+                    GitHub
+                    · ADD URL
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTACT FORM -->
+
+          <form
+            class="contact-form"
+            id="contactForm"
+            action="#"
+            method="post">
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="name">
+                  Name
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Your name"
+                  required>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="email">
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required>
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="subject">
+                Subject
+              </label>
+
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="Research / Expert Talk / Collaboration"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message..."
+                required></textarea>
+
+            </div>
+
+
+            <button
+              class="button button-primary"
+              type="submit">
+
+              Send message
+
+              <span aria-hidden="true">
+                →
+              </span>
+
+            </button>
+
+
+            <p
+              class="form-note"
+              id="formMessage">
+
+              EDIT: Connect this form to Formspree, Netlify Forms
+              or another form-processing service before publishing.
+
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © <span id="year"></span>
+        Dr. Eshan Samanta. All rights reserved.
+      </div>
+
+      <div>
+        Academic · Research · Innovation · Engineering
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+
+  <button
+    class="back-top"
+    id="backTop"
+    type="button"
+    aria-label="Back to top">
+
+    ↑
+
+  </button>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    /* =========================================================
+       ELEMENTS
+       ========================================================= */
+
+    const root =
+      document.documentElement;
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    const backTop =
+      document.getElementById("backTop");
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+    const formMessage =
+      document.getElementById("formMessage");
+
+
+    /* =========================================================
+       THEME
+       ========================================================= */
+
+    function setTheme(theme) {
+
+      root.setAttribute(
+        "data-theme",
+        theme
+      );
+
+      const dark =
+        theme === "dark";
+
+      themeToggle.textContent =
+        dark ? "☀" : "☾";
+
+      themeToggle.setAttribute(
+        "aria-label",
+        dark
+          ? "Switch to light mode"
+          : "Switch to dark mode"
+      );
+
+      try {
+
+        localStorage.setItem(
+          "eshan-theme",
+          theme
+        );
+
+      } catch (error) {
+
+        /* Storage unavailable */
+
+      }
+
+    }
+
+
+    let savedTheme = null;
+
+    try {
+
+      savedTheme =
+        localStorage.getItem(
+          "eshan-theme"
+        );
+
+    } catch (error) {
+
+      savedTheme = null;
+
+    }
+
+
+    if (
+      savedTheme === "dark" ||
+      savedTheme === "light"
+    ) {
+
+      setTheme(savedTheme);
+
+    } else {
+
+      const systemDark =
+        window.matchMedia &&
+        window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+      setTheme(
+        systemDark
+          ? "dark"
+          : "light"
+      );
+
+    }
+
+
+    themeToggle.addEventListener(
+      "click",
+      () => {
+
+        const current =
+          root.getAttribute(
+            "data-theme"
+          );
+
+        setTheme(
+          current === "dark"
+            ? "light"
+            : "dark"
+        );
+
+      }
+    );
+
+
+    /* =========================================================
+       MOBILE MENU
+       ========================================================= */
+
+    menuToggle.addEventListener(
+      "click",
+      () => {
+
+        const open =
+          navLinks.classList.toggle(
+            "open"
+          );
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(open)
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          open
+            ? "Close navigation menu"
+            : "Open navigation menu"
+        );
+
+        menuToggle.textContent =
+          open
+            ? "×"
+            : "☰";
+
+      }
+    );
+
+
+    /* Close menu after selecting navigation item */
+
+    navLinks
+      .querySelectorAll("a")
+      .forEach((link) => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove(
+              "open"
+            );
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuToggle.setAttribute(
+              "aria-label",
+              "Open navigation menu"
+            );
+
+            menuToggle.textContent =
+              "☰";
+
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       BACK TO TOP
+       ========================================================= */
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (
+          window.scrollY > 500
+        ) {
+
+          backTop.classList.add(
+            "visible"
+          );
+
+        } else {
+
+          backTop.classList.remove(
+            "visible"
+          );
+
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+    backTop.addEventListener(
+      "click",
+      () => {
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
+
+
+    /* =========================================================
+       CONTACT FORM
+       =========================================================
+
+       This prevents false submission until a form service
+       is connected.
+
+       Recommended:
+       - Formspree
+       - Netlify Forms
+       - Google Forms
+       - Custom backend
+
+       ========================================================= */
+
+    contactForm.addEventListener(
+      "submit",
+      (event) => {
+
+        event.preventDefault();
+
+        formMessage.textContent =
+          "The form is ready. Connect it to Formspree, Netlify Forms or your preferred backend to receive messages.";
+
+        formMessage.style.color =
+          "#19b8a8";
+
+      }
+    );
+
+
+    /* =========================================================
+       CURRENT YEAR
+       ========================================================= */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /* =========================================================
+       ESCAPE KEY
+       ========================================================= */
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          navLinks.classList.remove(
+            "open"
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+          );
+
+          menuToggle.textContent =
+            "☰";
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
