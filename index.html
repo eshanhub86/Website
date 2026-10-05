@@ -3331,12 +3331,20 @@
               class="form-note"
               id="formMessage">
 
-              EDIT: Connect this form to Formspree, Netlify Forms
-              or another form-processing service before publishing.
-
+          
             </p>
 
-          </form>
+          <form action="https://formspree.io/f/mkjonbrp" method="POST">
+  <input type="text"  name="name"    placeholder="Name" required>
+  <input type="email" name="email"   placeholder="Email" required>
+  <input type="text"  name="subject" placeholder="Subject">
+  <textarea           name="message" placeholder="Message" required></textarea>
+
+  <!-- optional: spam trap, hidden from humans -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <button type="submit">Send message →</button>
+</form>
 
         </div>
 
