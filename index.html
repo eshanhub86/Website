@@ -3559,35 +3559,38 @@
     );
 
 
-    /* =========================================================
-       CONTACT FORM
-       =========================================================
+  /* =========================================================
+   CONTACT FORM (Formspree)
+   ========================================================= */
 
-       This prevents false submission until a form service
-       is connected.
+contactForm.addEventListener("submit", async (event) => {
 
-       Recommended:
-       - Formspree
-       - Netlify Forms
-       - Google Forms
-       - Custom backend
+  event.preventDefault();
 
-       ========================================================= */
+  formMessage.style.color = "#19b8a8";
+  formMessage.textContent = "Sending...";
 
-    contactForm.addEventListener(
-      "submit",
-      (event) => {
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: new FormData(contactForm),
+      headers: { "Accept": "application/json" }
+    });
 
-        event.preventDefault();
+    if (response.ok) {
+      formMessage.textContent = "Thank you! Your message has been sent.";
+      contactForm.reset();
+    } else {
+      formMessage.style.color = "#e5484d";
+      formMessage.textContent = "Something went wrong. Please email me directly.";
+    }
 
-        formMessage.textContent =
-          "The form is ready. Connect it to Formspree, Netlify Forms or your preferred backend to receive messages.";
+  } catch (error) {
+    formMessage.style.color = "#e5484d";
+    formMessage.textContent = "Network error. Please try again.";
+  }
 
-        formMessage.style.color =
-          "#19b8a8";
-
-      }
-    );
+});
 
 
     /* =========================================================
